@@ -1,8 +1,11 @@
 __author__ = 'Sebi'
 
-
-import os
 import struct
+"""
+import cv2
+import numpy
+import matplotlib.pyplot as plt
+"""
 from array import array
 
 
@@ -64,6 +67,19 @@ class MNIST(object):
 
         for i in range(size):
             images[i][:] = image_data[i * rows * cols:(i + 1) * rows * cols]
+
+        """
+        im_array = images[0]
+        img = [[0]*28 for x in xrange(28)]
+        for j in range(784):
+            x = int(j / 28)
+            y = j % 28
+            img[x][y] = im_array[j]
+
+        im = numpy.asarray(img)
+        plt.imshow(im)
+        #cv2.imshow('7?', im)
+        """
 
         return images, labels
 
