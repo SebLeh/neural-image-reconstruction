@@ -28,12 +28,77 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.fILEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadWeightMatrixToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveWeightMatrixToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fILEToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(381, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menu";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 302);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(381, 22);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // fILEToolStripMenuItem
+            // 
+            this.fILEToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.loadWeightMatrixToolStripMenuItem,
+            this.saveWeightMatrixToolStripMenuItem});
+            this.fILEToolStripMenuItem.Name = "fILEToolStripMenuItem";
+            this.fILEToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.fILEToolStripMenuItem.Text = "FILE";
+            // 
+            // loadWeightMatrixToolStripMenuItem
+            // 
+            this.loadWeightMatrixToolStripMenuItem.Name = "loadWeightMatrixToolStripMenuItem";
+            this.loadWeightMatrixToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.loadWeightMatrixToolStripMenuItem.Text = "load weight matrix";
+            // 
+            // saveWeightMatrixToolStripMenuItem
+            // 
+            this.saveWeightMatrixToolStripMenuItem.Name = "saveWeightMatrixToolStripMenuItem";
+            this.saveWeightMatrixToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.saveWeightMatrixToolStripMenuItem.Text = "save weight matrix";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(381, 324);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fILEToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loadWeightMatrixToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveWeightMatrixToolStripMenuItem;
     }
 }
 

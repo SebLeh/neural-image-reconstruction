@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Neural_Image_Recontruction
 {
     public partial class Form1 : Form
@@ -15,6 +16,13 @@ namespace Neural_Image_Recontruction
         public Form1()
         {
             InitializeComponent();
+            init();
+        }
+
+        public void init()
+        {
+            file_loader = new FileLoader();
+
         }
     }
 }
