@@ -13,6 +13,8 @@ namespace Neural_Image_Recontruction
 {
     public partial class Form1 : Form
     {
+        public string data_path = "C:\\Users\\Sebi\\OneDrive\\Dokumente\\Master\\Erasmus\\Vorlesungen\\project\\code\\data\\noisy";
+        public string label_path = "C:\\Users\\Sebi\\OneDrive\\Dokumente\\Master\\Erasmus\\Vorlesungen\\project\\code\\data\\clean";
         public Form1()
         {
             InitializeComponent();
@@ -21,8 +23,16 @@ namespace Neural_Image_Recontruction
 
         public void init()
         {
-            file_loader = new FileLoader();
+            FileLoader file_loader = new FileLoader();
+            file_loader.open(label_path, "gauss_5");
+        }
 
+        private void setPathToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            fbd.SelectedPath = this.data_path;
+            DialogResult result = fbd.ShowDialog();
+            data_path = fbd.SelectedPath;
         }
     }
 }

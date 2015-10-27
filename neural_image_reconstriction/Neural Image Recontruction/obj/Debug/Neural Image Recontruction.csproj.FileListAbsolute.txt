@@ -1,1 +1,9 @@
 C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\bin\Debug\Neural Image Recontruction.exe.config
+C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\obj\Debug\Neural Image Recontruction.csprojResolveAssemblyReference.cache
+C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\obj\Debug\Neural_Image_Recontruction.Form1.resources
+C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\obj\Debug\Neural_Image_Recontruction.Properties.Resources.resources
+C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\obj\Debug\Neural Image Recontruction.csproj.GenerateResource.Cache
+C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\bin\Debug\Neural Image Recontruction.exe
+C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\bin\Debug\Neural Image Recontruction.pdb
+C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\obj\Debug\Neural Image Recontruction.exe
+C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\obj\Debug\Neural Image Recontruction.pdb
