@@ -98,11 +98,6 @@ namespace Neural_Image_Recontruction
                     try
                     {
                         word = word + (token[0].ToString());
-                        if (int.Parse(token[0].ToString()) != 0)
-                        {
-                            int a = 0;
-                        }
-                        //j++;
                     }
                     catch (Exception ex)
                     {

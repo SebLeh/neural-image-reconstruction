@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NN.cs" />
     <Compile Include="Data.cs" />
     <Compile Include="FileLoader.cs" />
     <Compile Include="Form1.cs">

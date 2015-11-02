@@ -16,7 +16,7 @@ namespace Neural_Image_Recontruction
     {
         public string dataPath = "C:\\Users\\Sebi\\OneDrive\\Dokumente\\Master\\Erasmus\\Vorlesungen\\project\\code\\data\\noisy";
         public string labelPath = "C:\\Users\\Sebi\\OneDrive\\Dokumente\\Master\\Erasmus\\Vorlesungen\\project\\code\\data\\clean";
-        public Data data = new Data();
+        private Data data = new Data();
         public Form1()
         {
             InitializeComponent();
