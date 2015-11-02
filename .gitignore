@@ -1,2 +1,5 @@
 *.my-obj
 *.png
+*.gz
+*.idx1-ubyte
+*.idx3-ubyte
