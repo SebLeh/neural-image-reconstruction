@@ -4,44 +4,69 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
+using System.Threading;
 
 namespace Neural_Image_Recontruction
 {
     class FileLoader
     {
-        public string path;
-        //public int[][][] images;
+        //private ManualResetEvent _doneEvent;
+
+
+        private int i = 0;
+        private int j = 0;
+
+        public string _path;
+        public string _type;
+        public string _noiseType;
+        public int _samples;
+        public int[][] _imgArr = new int[1][];
 
         public FileLoader()
         {
-
+            //_doneEvent = doneEvent;
         }
-        public int[,] open(string path, string type, string noise_type, int samples)
+
+        public void prepareOpen(string path, string type, string noise_type, int samples)
+        {
+            _path = path;
+            _type = type;
+            _noiseType = noise_type;
+            _samples = samples;
+            Array.Resize(ref _imgArr, _samples);
+            for(int i=0; i<_samples; i++)
+            {
+                Array.Resize(ref _imgArr[i], 784);
+            }
+        } //method prepareOpen
+
+        public void open()
         {
 
             //System.IO.Stream fs = null;
             System.IO.StreamReader fr = null;
-            int[,] img_line_arr = new int[samples, 784];
+            //int[,] img_line_arr = new int[_samples, 784];
             string file;
-            if (noise_type == "clean")
+            if (_noiseType == "clean")
             {
-                file = path + "\\" + type + "\\" + "file.my-obj";
+                file = _path + "\\" + _type + "\\" + "file.my-obj";
             }
             else
             {
-                file = path + "\\" + type + "\\" + noise_type + ".my-obj";
+                file = _path + "\\" + _type + "\\" + _noiseType + ".my-obj";
             }
+            //file = "C:\\Users\\Sebi\\OneDrive\\Dokumente\\Master\\Erasmus\\Vorlesungen\\project\\code\\file.my-obj";
+
             fr = new System.IO.StreamReader(file);
             string text = fr.ReadToEnd();
-            
+            text = text.Replace(" ", string.Empty);
 
-            for (int k = 0; k<text.Length; k++)
+            string word = string.Empty;
+            char[] token = new char[1];
+
+            for (int k = 0; k < text.Length; k++)
             {
-                int i = 0;
-                int j = 0;
-                char[] token = new char[1];
                 text.CopyTo(k, token, 0, 1);
-                //text.Remove(0, 1);
 
                 if (token[0].ToString() == "[")
                 {
@@ -50,7 +75,9 @@ namespace Neural_Image_Recontruction
                 }
                 else if (token[0].ToString() == "]")
                 {
-                    //image ends                    
+                    //image ends    
+                    _imgArr[i][j] = int.Parse(word);
+                    word = string.Empty;
                     i++;
                 }
                 else if (token[0].ToString() == "_")
@@ -61,35 +88,40 @@ namespace Neural_Image_Recontruction
                 else if (token[0].ToString() == ",")
                 {
                     //separator between pixel values
-                }
-                else if (token[0].ToString() == "")
-                {
-                    //sadly file has whitespace
-                    continue;
+                    _imgArr[i][j] = int.Parse(word);
+                    word = string.Empty;
+                    j++;
                 }
                 else
                 {
-                    //image data
+                    //pixel data
                     try
                     {
-                        img_line_arr[i, j] = int.Parse(token[0].ToString());
-                        j++;
+                        word = word + (token[0].ToString());
+                        if (int.Parse(token[0].ToString()) != 0)
+                        {
+                            int a = 0;
+                        }
+                        //j++;
                     }
                     catch (Exception ex)
                     {
                         continue;
-                    }
-                    
-                }
-
-            }         
+                    } //try
+                } //if
+            } //for
+            //return img_line_arr;
+        } //method open
             
+        //public void ThreadPoolCallBack(Object threadContext)
+        //{
+        //    int threadIndex = (int)threadContext;
+        //    Console.WriteLine("thread {0} started...", threadIndex);
+        //}
 
-            return img_line_arr;
-        }
-        //string path;
-        //System.IO.Stream fs = null;
-        //System.IO.StreamReader fr = null;
+            
+        
+
     }
 
 }

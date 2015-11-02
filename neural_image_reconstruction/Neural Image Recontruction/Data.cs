@@ -10,5 +10,14 @@ namespace Neural_Image_Recontruction
     // and process it if necessary
     class Data
     {
+        public int[][] trainingData;
+        public int[][] trainingLabels;
+        public int[][] testData;
+        public int[][] testLabels;
+
+        public Data()
+        {
+
+        }
     }
 }
