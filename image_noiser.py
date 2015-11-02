@@ -33,8 +33,8 @@ def serialize(image):
             k = k + 1
     return im_array
 
-im_test, labels_test = mnist.load_testing()
-imgs_test = im_test[:10]
+imgs_test, labels_test = mnist.load_testing()
+#imgs_test = im_test[:10]
 
 #test_clean = np.empty(imgs_test.__len__(), dtype=object)
 test_clean = np.zeros(imgs_test.__len__(), dtype=object)
