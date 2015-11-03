@@ -27,6 +27,7 @@ namespace Neural_Image_Recontruction
 
         public void init()
         {
+            FileConverter conv = new FileConverter();
             int[] layers = { 600, 700, 800 };
             nn = new NN(3, layers);
         }
