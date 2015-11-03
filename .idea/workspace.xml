@@ -2,62 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31735ce8-3ad1-4618-bda5-f51214c8203e" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\data\clean\test\file.my_obj" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\.vs\neural_image_reconstriction\v14\.suo" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\App.config" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\FileLoader.cs" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\Form1.Designer.cs" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\Form1.cs" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\Form1.resx" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\Neural Image Recontruction.csproj" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\Program.cs" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\Properties\AssemblyInfo.cs" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\Properties\Resources.Designer.cs" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\Properties\Resources.resx" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\Properties\Settings.Designer.cs" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\Properties\Settings.settings" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\bin\Debug\Neural Image Recontruction.exe" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\bin\Debug\Neural Image Recontruction.exe.config" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\bin\Debug\Neural Image Recontruction.pdb" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\bin\Debug\Neural Image Recontruction.vshost.exe" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\bin\Debug\Neural Image Recontruction.vshost.exe.config" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\bin\Release\Neural Image Recontruction.exe" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\bin\Release\Neural Image Recontruction.exe.config" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\bin\Release\Neural Image Recontruction.pdb" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\bin\Release\Neural Image Recontruction.vshost.exe" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\bin\Release\Neural Image Recontruction.vshost.exe.config" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\bin\Release\Neural Image Recontruction.vshost.exe.manifest" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\obj\Debug\DesignTimeResolveAssemblyReferences.cache" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\obj\Debug\Neural Image Recontruction.csproj.FileListAbsolute.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\obj\Debug\Neural Image Recontruction.csproj.GenerateResource.Cache" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\obj\Debug\Neural Image Recontruction.csprojResolveAssemblyReference.cache" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\obj\Debug\Neural Image Recontruction.exe" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\obj\Debug\Neural Image Recontruction.pdb" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\obj\Debug\Neural_Image_Recontruction.Form1.resources" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\obj\Debug\Neural_Image_Recontruction.Properties.Resources.resources" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\obj\Release\Neural Image Recontruction.csproj.FileListAbsolute.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\obj\Release\Neural Image Recontruction.csproj.GenerateResource.Cache" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\obj\Release\Neural Image Recontruction.csprojResolveAssemblyReference.cache" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\obj\Release\Neural Image Recontruction.exe" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\obj\Release\Neural Image Recontruction.pdb" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\obj\Release\Neural_Image_Recontruction.Form1.resources" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\obj\Release\Neural_Image_Recontruction.Properties.Resources.resources" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\obj\Release\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\obj\Release\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\obj\Release\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\file_loader.cs" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\neural_image_reconstriction.sln" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/clean/test/file.my-obj" afterPath="$PROJECT_DIR$/data/clean/test/file.my-obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/noisy/test/gauss_15.my-obj" afterPath="$PROJECT_DIR$/data/noisy/test/gauss_15.my-obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/noisy/test/gauss_5.my-obj" afterPath="$PROJECT_DIR$/data/noisy/test/gauss_5.my-obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/noisy/test/snp_002.my-obj" afterPath="$PROJECT_DIR$/data/noisy/test/snp_002.my-obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image_noiser.py" afterPath="$PROJECT_DIR$/image_noiser.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/neural_image_reconstruction/.vs/neural_image_reconstruction/v14/.suo" afterPath="$PROJECT_DIR$/neural_image_reconstruction/.vs/neural_image_reconstruction/v14/.suo" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/neural_image_reconstruction/Neural Image Recontruction/bin/Debug/Neural Image Recontruction.exe" afterPath="$PROJECT_DIR$/neural_image_reconstruction/Neural Image Recontruction/bin/Debug/Neural Image Recontruction.exe" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/neural_image_reconstruction/Neural Image Recontruction/obj/Debug/Neural Image Recontruction.exe" afterPath="$PROJECT_DIR$/neural_image_reconstruction/Neural Image Recontruction/obj/Debug/Neural Image Recontruction.exe" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/neural_image_reconstruction/Neural Image Recontruction/bin/Debug/Neural Image Recontruction.pdb" afterPath="$PROJECT_DIR$/neural_image_reconstruction/Neural Image Recontruction/bin/Debug/Neural Image Recontruction.pdb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/neural_image_reconstruction/Neural Image Recontruction/obj/Debug/Neural Image Recontruction.pdb" afterPath="$PROJECT_DIR$/neural_image_reconstruction/Neural Image Recontruction/obj/Debug/Neural Image Recontruction.pdb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/neural_image_reconstruction/Neural Image Recontruction/Form1.cs" afterPath="$PROJECT_DIR$/neural_image_reconstruction/Neural Image Recontruction/Form1.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/neural_image_reconstruction/Neural Image Recontruction/Neural Image Recontruction.csproj" afterPath="$PROJECT_DIR$/neural_image_reconstruction/Neural Image Recontruction/Neural Image Recontruction.csproj" />
     </list>
     <ignored path="code.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -210,6 +161,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -231,7 +183,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -486,6 +437,70 @@
     <entry file="file://$PROJECT_DIR$/image_noiser.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="58" column="24" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
+          <folding>
+            <element signature="e#21#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/save.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#67#78#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../../../IAI/IAI/parameters.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/noise.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/IAI Programm/IAI/tools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="73" column="43" selection-start-line="73" selection-start-column="43" selection-end-line="73" selection-end-column="43" />
+          <folding>
+            <element signature="e#45#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/IAI Programm/IAI/sec_detect.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="77" column="32" selection-start-line="77" selection-start-column="24" selection-end-line="77" selection-end-column="32" />
+          <folding>
+            <element signature="e#45#67#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image_noiser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding>
             <element signature="e#21#30#0" expanded="true" />
@@ -507,7 +522,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="183" column="0" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -856,7 +870,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4194079">
           <caret line="189" column="33" selection-start-line="189" selection-start-column="33" selection-end-line="189" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>

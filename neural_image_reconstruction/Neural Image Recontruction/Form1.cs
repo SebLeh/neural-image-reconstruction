@@ -25,7 +25,7 @@ namespace Neural_Image_Recontruction
 
         public void init()
         {
-
+            FileConverter conv = new FileConverter();
         }
 
         private void setPathToolStripMenuItem_Click(object sender, EventArgs e)
