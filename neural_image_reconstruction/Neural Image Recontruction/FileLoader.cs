@@ -39,6 +39,12 @@ namespace Neural_Image_Recontruction
             {
                 Array.Resize(ref _imgArr[i], 784);
             }
+
+            if (_samples > 1000)
+            {
+                _samples = 1000;
+                // max 1000 samples in a single file
+            }
         } //method prepareOpen
 
         public void open()
