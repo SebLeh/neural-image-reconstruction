@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Threading;
+using System.Text.RegularExpressions;
 
 namespace Neural_Image_Recontruction
 {
@@ -59,11 +60,21 @@ namespace Neural_Image_Recontruction
 
             fr = new System.IO.StreamReader(file);
             string text = fr.ReadToEnd();
-            text = text.Replace(" ", string.Empty);
 
             string word = string.Empty;
             char[] token = new char[1];
 
+            if (_noiseType == "clean")
+            {
+                text = text.Replace(" ", string.Empty);
+            }
+            else
+            {
+                text = text.Replace("\n", string.Empty);
+                text = text.Replace("\r", string.Empty);
+                text = Regex.Replace(text, @"\[\s+", "[");
+                text = Regex.Replace(text, @"\s+", ",");
+            }
             for (int k = 0; k < text.Length; k++)
             {
                 text.CopyTo(k, token, 0, 1);
@@ -79,6 +90,10 @@ namespace Neural_Image_Recontruction
                     _imgArr[i][j] = int.Parse(word);
                     word = string.Empty;
                     i++;
+                    if (i >= _imgArr.Length)
+                    {
+                        break;
+                    }
                 }
                 else if (token[0].ToString() == "_")
                 {
@@ -94,15 +109,7 @@ namespace Neural_Image_Recontruction
                 }
                 else
                 {
-                    //pixel data
-                    try
-                    {
-                        word = word + (token[0].ToString());
-                    }
-                    catch (Exception ex)
-                    {
-                        continue;
-                    } //try
+                    word = word + (token[0].ToString());
                 } //if
             } //for
             //return img_line_arr;

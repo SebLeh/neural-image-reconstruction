@@ -82,13 +82,13 @@ namespace Neural_Image_Recontruction
 
             try
             {
-                testDataLoader.prepareOpen(dataPath, "test", noiseType, 10000);
+                testDataLoader.prepareOpen(dataPath, "test", noiseType, 100);
                 Thread testDataThread = new Thread(new ThreadStart(testDataLoader.open));
-                testLabelLoader.prepareOpen(labelPath, "test", "clean", 10000);
+                testLabelLoader.prepareOpen(labelPath, "test", "clean", 100);
                 Thread testLabelThread = new Thread(new ThreadStart(testLabelLoader.open));
-                trainDataLoader.prepareOpen(dataPath, "train", noiseType, 60000);
+                trainDataLoader.prepareOpen(dataPath, "train", noiseType, 600);
                 Thread trainDataThread = new Thread(new ThreadStart(trainDataLoader.open));
-                trainLabelLoader.prepareOpen(labelPath, "train", "clean", 60000);
+                trainLabelLoader.prepareOpen(labelPath, "train", "clean", 600);
                 Thread trainLabelThread = new Thread(new ThreadStart(trainLabelLoader.open));
 
                 testDataThread.Start();
