@@ -124,6 +124,7 @@ namespace Neural_Image_Recontruction
                 {
                     // the last number, because file ends with number
                     _imgArr[i][j] = int.Parse(word);
+                    Array.Resize(ref _imgArr, i+1);
                     break;
                 }
             } //for
