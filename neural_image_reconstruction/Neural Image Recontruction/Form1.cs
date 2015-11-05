@@ -27,7 +27,6 @@ namespace Neural_Image_Recontruction
 
         public void init()
         {
-            FileConverter conv = new FileConverter();
             int[] layers = { 600, 700, 800 };
             nn = new NN(3, layers);
         }
@@ -42,6 +41,9 @@ namespace Neural_Image_Recontruction
 
         private void ui_load_Click(object sender, EventArgs e)
         {
+            FileLoader fileLoader = new FileLoader();
+            fileLoader.prepareOpen(dataPath, "train", "gauss_5", 1000, 59);
+            fileLoader.open();
             //FileLoader testDataLoader = new FileLoader();
             //FileLoader testLabelLoader = new FileLoader();
             //FileLoader trainDataLoader = new FileLoader();

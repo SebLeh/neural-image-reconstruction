@@ -21,6 +21,7 @@ namespace Neural_Image_Recontruction
         public string _type;
         public string _noiseType;
         public int _samples;
+        public int _database;
         public int[][] _imgArr = new int[1][];
 
         public FileLoader()
@@ -28,12 +29,13 @@ namespace Neural_Image_Recontruction
             //_doneEvent = doneEvent;
         }
 
-        public void prepareOpen(string path, string type, string noise_type, int samples)
+        public void prepareOpen(string path, string type, string noise_type, int samples, int database)
         {
             _path = path;
             _type = type;
             _noiseType = noise_type;
             _samples = samples;
+            _database = database;
             Array.Resize(ref _imgArr, _samples);
             for(int i=0; i<_samples; i++)
             {
@@ -56,11 +58,11 @@ namespace Neural_Image_Recontruction
             string file;
             if (_noiseType == "clean")
             {
-                file = _path + "\\" + _type + "\\" + "file.my-obj";
+                file = _path + "\\" + _type + "\\" + "file-" + _database.ToString() + ".my-obj";
             }
             else
             {
-                file = _path + "\\" + _type + "\\" + _noiseType + ".my-obj";
+                file = _path + "\\" + _type + "\\" + _noiseType + "-" + _database.ToString() + ".my-obj";
             }
             //file = "C:\\Users\\Sebi\\OneDrive\\Dokumente\\Master\\Erasmus\\Vorlesungen\\project\\code\\file.my-obj";
 
@@ -70,18 +72,18 @@ namespace Neural_Image_Recontruction
             string word = string.Empty;
             char[] token = new char[1];
 
-            if (_noiseType == "clean")
-            {
-                text = text.Replace(" ", string.Empty);
-            }
-            else
-            {
-                text = text.Replace("\n", string.Empty);
-                text = text.Replace("\r", string.Empty);
-                text = Regex.Replace(text, @"\[\s+", "[");
-                text = Regex.Replace(text, @"\s+", ",");
-            }
-            for (int k = 0; k < text.Length; k++)
+            //if (_noiseType == "clean")
+            //{
+            //    text = text.Replace(" ", string.Empty);
+            //}
+            //else
+            //{
+            //    text = text.Replace("\n", string.Empty);
+            //    text = text.Replace("\r", string.Empty);
+            //    text = Regex.Replace(text, @"\[\s+", "[");
+            //    text = Regex.Replace(text, @"\s+", ",");
+            //}
+            for (int k = 1; k < text.Length; k++)
             {
                 text.CopyTo(k, token, 0, 1);
 
@@ -117,6 +119,13 @@ namespace Neural_Image_Recontruction
                 {
                     word = word + (token[0].ToString());
                 } //if
+
+                if (k == text.Length - 1)
+                {
+                    // the last number, because file ends with number
+                    _imgArr[i][j] = int.Parse(word);
+                    break;
+                }
             } //for
             //return img_line_arr;
         } //method open

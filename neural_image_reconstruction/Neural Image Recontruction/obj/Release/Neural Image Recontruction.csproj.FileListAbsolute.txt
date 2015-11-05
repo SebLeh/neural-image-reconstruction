@@ -7,3 +7,12 @@ C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_
 C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\obj\Release\Neural Image Recontruction.csproj.GenerateResource.Cache
 C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\obj\Release\Neural Image Recontruction.exe
 C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstriction\Neural Image Recontruction\obj\Release\Neural Image Recontruction.pdb
+C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstruction\Neural Image Recontruction\bin\Release\Neural Image Recontruction.exe.config
+C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstruction\Neural Image Recontruction\obj\Release\Neural Image Recontruction.exe
+C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstruction\Neural Image Recontruction\obj\Release\Neural Image Recontruction.pdb
+C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstruction\Neural Image Recontruction\bin\Release\Neural Image Recontruction.exe
+C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstruction\Neural Image Recontruction\bin\Release\Neural Image Recontruction.pdb
+C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstruction\Neural Image Recontruction\obj\Release\Neural Image Recontruction.csprojResolveAssemblyReference.cache
+C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstruction\Neural Image Recontruction\obj\Release\Neural_Image_Recontruction.Form1.resources
+C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstruction\Neural Image Recontruction\obj\Release\Neural_Image_Recontruction.Properties.Resources.resources
+C:\Users\Sebi\OneDrive\Dokumente\Master\Erasmus\Vorlesungen\project\code\neural_image_reconstruction\Neural Image Recontruction\obj\Release\Neural Image Recontruction.csproj.GenerateResource.Cache
