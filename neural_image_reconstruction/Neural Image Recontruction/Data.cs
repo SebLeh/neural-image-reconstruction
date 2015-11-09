@@ -20,17 +20,28 @@ namespace Neural_Image_Recontruction
 
         }
 
-        public float[][] normalize(int[][] imageArray)
+        public double[][] normalize(int[][] imageArray)
         {
-            float[][] normalized = new float[imageArray.Length][];
+            double[][] normalized = new double[imageArray.Length][];
             for (int i=0; i<imageArray.Length; i++)
             {
                 Array.Resize(ref normalized[i], imageArray[i].Length);
                 for (int j=0; j < imageArray[i].Length; j++)
                 {
-                    float norm = imageArray[i][j];
+                    double norm = imageArray[i][j];
                     normalized[i][j] = norm / 255; //devide by max pixel value to set max value to 1
                 }
+            }
+            return normalized;
+        }
+
+        public double[] normalize(int[] inputVector)
+        {
+            double[] normalized = new double[inputVector.Length];
+            for (int i=0; i<normalized.Length; i++)
+            {
+                double norm = inputVector[i];
+                normalized[i] = norm / 255;
             }
             return normalized;
         }

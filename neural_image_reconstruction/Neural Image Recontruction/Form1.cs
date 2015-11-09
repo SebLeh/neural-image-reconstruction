@@ -31,19 +31,40 @@ namespace Neural_Image_Recontruction
             nn = new NN(3, layers);
         }
 
-        private void setPathToolStripMenuItem_Click(object sender, EventArgs e)
+        private void setDataPathToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            ui_statusLabel.Text = "... Setting Data Path";
+            ui_progressBar.Value = 50;
             FolderBrowserDialog fbd = new FolderBrowserDialog();
             fbd.SelectedPath = this.dataPath;
             DialogResult result = fbd.ShowDialog();
             dataPath = fbd.SelectedPath;
+            ui_statusLabel.Text = "Data Path set.";
+            ui_progressBar.Value = 100;
+        }
+
+        private void setLabelPathToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ui_statusLabel.Text = "... Setting Label Path";
+            ui_progressBar.Value = 50;
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            fbd.SelectedPath = this.labelPath;
+            DialogResult result = fbd.ShowDialog();
+            labelPath = fbd.SelectedPath;
+            ui_statusLabel.Text = "Label Path set.";
+            ui_progressBar.Value = 100;
         }
 
         private void ui_load_Click(object sender, EventArgs e)
         {
-            FileLoader fileLoader = new FileLoader();
+            DataLoader fileLoader = new DataLoader();
             fileLoader.prepareOpen(dataPath, "train", "gauss_5", 1000, 0);
             fileLoader.open();
+
+            double[] input = data.normalize(fileLoader._imgArr[0]);
+            nn.prepareFeed(input);
+            nn.feedForward();
+
             //FileLoader testDataLoader = new FileLoader();
             //FileLoader testLabelLoader = new FileLoader();
             //FileLoader trainDataLoader = new FileLoader();
@@ -117,6 +138,40 @@ namespace Neural_Image_Recontruction
             //data.testLabels = testLabelLoader._imgArr;
             //data.trainingData = trainDataLoader._imgArr;
             //data.trainingLabels = trainLabelLoader._imgArr;
+        }
+
+        private void saveWeightMatrixToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FileManager fileMng = new FileManager();
+            fileMng.prepareSave(nn.getWeights());
+            Thread saveThread = new Thread(new ThreadStart(fileMng.save));
+
+            ui_statusLabel.Text = "...writing File, please wait";
+            ui_progressBar.Value = 50;
+            saveThread.Start();
+            saveThread.Join();
+            //while (saveThread.IsAlive)
+            //{                
+            //    if (ui_progressBar.Value == 100)
+            //    {
+            //        ui_progressBar.Value = 5;
+            //    }
+            //    else
+            //    {
+            //        ui_progressBar.Increment(5);
+            //    }
+            //}
+            if (!saveThread.IsAlive)
+            {
+                ui_statusLabel.Text = "File saved successfully";
+                ui_progressBar.Value = 100;
+            }
+        }
+
+        private void loadWeightMatrixToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FileManager fileMng = new FileManager();
+            fileMng.load();
         }
     }
 }

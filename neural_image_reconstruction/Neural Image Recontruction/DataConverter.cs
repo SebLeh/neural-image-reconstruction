@@ -8,12 +8,12 @@ using System.IO;
 
 namespace Neural_Image_Recontruction
 {
-    class FileConverter
+    class DataConverter
     {
         public string dataPath = "C:\\Users\\Sebi\\OneDrive\\Dokumente\\Master\\Erasmus\\Vorlesungen\\project\\code\\data\\noisy";
         public string labelPath = "C:\\Users\\Sebi\\OneDrive\\Dokumente\\Master\\Erasmus\\Vorlesungen\\project\\code\\data\\clean";
 
-        public FileConverter()
+        public DataConverter()
         {
             doIt();
         }

@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 
 namespace Neural_Image_Recontruction
 {
-    class FileLoader
+    class DataLoader
     {
         //private ManualResetEvent _doneEvent;
 
@@ -24,7 +24,7 @@ namespace Neural_Image_Recontruction
         public int _database;
         public int[][] _imgArr = new int[1][];
 
-        public FileLoader()
+        public DataLoader()
         {
             //_doneEvent = doneEvent;
         }

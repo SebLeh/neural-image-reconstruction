@@ -33,22 +33,24 @@
             this.loadWeightMatrixToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveWeightMatrixToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dATAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.setPathToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setDataPathToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setLabelPathToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.status_bar = new System.Windows.Forms.StatusStrip();
-            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.ui_progressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.layer_box = new System.Windows.Forms.GroupBox();
-            this.ui_layers = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.ui_neurons = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ui_layers = new System.Windows.Forms.NumericUpDown();
             this.ui_load = new System.Windows.Forms.Button();
             this.ui_noiseType = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.ui_statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.status_bar.SuspendLayout();
             this.layer_box.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ui_layers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ui_neurons)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ui_layers)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -74,43 +76,62 @@
             // loadWeightMatrixToolStripMenuItem
             // 
             this.loadWeightMatrixToolStripMenuItem.Name = "loadWeightMatrixToolStripMenuItem";
-            this.loadWeightMatrixToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.loadWeightMatrixToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.loadWeightMatrixToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.loadWeightMatrixToolStripMenuItem.Text = "load weight matrix";
+            this.loadWeightMatrixToolStripMenuItem.ToolTipText = "Load weights from previous (trained) network from file\r\n(this may take a while fo" +
+    "r big networks)";
+            this.loadWeightMatrixToolStripMenuItem.Click += new System.EventHandler(this.loadWeightMatrixToolStripMenuItem_Click);
             // 
             // saveWeightMatrixToolStripMenuItem
             // 
             this.saveWeightMatrixToolStripMenuItem.Name = "saveWeightMatrixToolStripMenuItem";
-            this.saveWeightMatrixToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.saveWeightMatrixToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.saveWeightMatrixToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.saveWeightMatrixToolStripMenuItem.Text = "save weight matrix";
+            this.saveWeightMatrixToolStripMenuItem.ToolTipText = "Save weights of current (trained) network to file\r\n(this may take a while for big" +
+    " networks)";
+            this.saveWeightMatrixToolStripMenuItem.Click += new System.EventHandler(this.saveWeightMatrixToolStripMenuItem_Click);
             // 
             // dATAToolStripMenuItem
             // 
             this.dATAToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.setPathToolStripMenuItem});
+            this.setDataPathToolStripMenuItem,
+            this.setLabelPathToolStripMenuItem});
             this.dATAToolStripMenuItem.Name = "dATAToolStripMenuItem";
             this.dATAToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.dATAToolStripMenuItem.Text = "DATA";
             // 
-            // setPathToolStripMenuItem
+            // setDataPathToolStripMenuItem
             // 
-            this.setPathToolStripMenuItem.Name = "setPathToolStripMenuItem";
-            this.setPathToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.setPathToolStripMenuItem.Text = "set path";
-            this.setPathToolStripMenuItem.Click += new System.EventHandler(this.setPathToolStripMenuItem_Click);
+            this.setDataPathToolStripMenuItem.Name = "setDataPathToolStripMenuItem";
+            this.setDataPathToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.setDataPathToolStripMenuItem.Text = "set data path";
+            this.setDataPathToolStripMenuItem.ToolTipText = "Path to where both, Test- and Training-Data is positioned";
+            this.setDataPathToolStripMenuItem.Click += new System.EventHandler(this.setDataPathToolStripMenuItem_Click);
+            // 
+            // setLabelPathToolStripMenuItem
+            // 
+            this.setLabelPathToolStripMenuItem.Name = "setLabelPathToolStripMenuItem";
+            this.setLabelPathToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.setLabelPathToolStripMenuItem.Text = "set label path";
+            this.setLabelPathToolStripMenuItem.ToolTipText = "Path to where both, Test- and Training-Labels are positioned";
+            this.setLabelPathToolStripMenuItem.Click += new System.EventHandler(this.setLabelPathToolStripMenuItem_Click);
             // 
             // status_bar
             // 
             this.status_bar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripProgressBar1});
+            this.ui_progressBar,
+            this.ui_statusLabel});
             this.status_bar.Location = new System.Drawing.Point(0, 302);
             this.status_bar.Name = "status_bar";
             this.status_bar.Size = new System.Drawing.Size(381, 22);
             this.status_bar.TabIndex = 998;
             // 
-            // toolStripProgressBar1
+            // ui_progressBar
             // 
-            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
+            this.ui_progressBar.Name = "ui_progressBar";
+            this.ui_progressBar.Size = new System.Drawing.Size(100, 16);
             // 
             // layer_box
             // 
@@ -124,46 +145,6 @@
             this.layer_box.TabIndex = 999;
             this.layer_box.TabStop = false;
             this.layer_box.Text = "Layers";
-            // 
-            // ui_layers
-            // 
-            this.ui_layers.Location = new System.Drawing.Point(147, 19);
-            this.ui_layers.Maximum = new decimal(new int[] {
-            15,
-            0,
-            0,
-            0});
-            this.ui_layers.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.ui_layers.Name = "ui_layers";
-            this.ui_layers.Size = new System.Drawing.Size(120, 20);
-            this.ui_layers.TabIndex = 0;
-            this.ui_layers.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 13);
-            this.label1.TabIndex = 900;
-            this.label1.Text = "Number of hidden Layers";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 48);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 13);
-            this.label2.TabIndex = 901;
-            this.label2.Text = "Neurons per Layer";
             // 
             // ui_neurons
             // 
@@ -183,6 +164,46 @@
             this.ui_neurons.TabIndex = 1;
             this.ui_neurons.Value = new decimal(new int[] {
             50,
+            0,
+            0,
+            0});
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 13);
+            this.label2.TabIndex = 901;
+            this.label2.Text = "Neurons per Layer";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(125, 13);
+            this.label1.TabIndex = 900;
+            this.label1.Text = "Number of hidden Layers";
+            // 
+            // ui_layers
+            // 
+            this.ui_layers.Location = new System.Drawing.Point(147, 19);
+            this.ui_layers.Maximum = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.ui_layers.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.ui_layers.Name = "ui_layers";
+            this.ui_layers.Size = new System.Drawing.Size(120, 20);
+            this.ui_layers.TabIndex = 0;
+            this.ui_layers.Value = new decimal(new int[] {
+            1,
             0,
             0,
             0});
@@ -225,6 +246,11 @@
             this.label3.TabIndex = 1002;
             this.label3.Text = "Type of data";
             // 
+            // ui_statusLabel
+            // 
+            this.ui_statusLabel.Name = "ui_statusLabel";
+            this.ui_statusLabel.Size = new System.Drawing.Size(0, 17);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,8 +271,8 @@
             this.status_bar.PerformLayout();
             this.layer_box.ResumeLayout(false);
             this.layer_box.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ui_layers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ui_neurons)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ui_layers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,8 +286,8 @@
         private System.Windows.Forms.ToolStripMenuItem loadWeightMatrixToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveWeightMatrixToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dATAToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem setPathToolStripMenuItem;
-        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
+        private System.Windows.Forms.ToolStripMenuItem setDataPathToolStripMenuItem;
+        private System.Windows.Forms.ToolStripProgressBar ui_progressBar;
         private System.Windows.Forms.GroupBox layer_box;
         private System.Windows.Forms.NumericUpDown ui_neurons;
         private System.Windows.Forms.Label label2;
@@ -270,6 +296,8 @@
         private System.Windows.Forms.Button ui_load;
         private System.Windows.Forms.ComboBox ui_noiseType;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ToolStripMenuItem setLabelPathToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel ui_statusLabel;
     }
 }
 
