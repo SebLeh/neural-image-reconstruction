@@ -60,10 +60,17 @@ namespace Neural_Image_Recontruction
             DataLoader fileLoader = new DataLoader();
             fileLoader.prepareOpen(dataPath, "train", "gauss_5", 1000, 0);
             fileLoader.open();
+            data.trainingData = fileLoader._imgArr;
 
-            double[] input = data.normalize(fileLoader._imgArr[0]);
-            nn.prepareFeed(input);
+            fileLoader.prepareOpen(labelPath, "train", "clean", 1000, 0);
+            fileLoader.open();
+            data.trainingLabels = fileLoader._imgArr;
+
+            double[] input = data.normalize(data.trainingData[0]);
+            double[] target = data.normalize(data.trainingLabels[0]);
+            nn.prepareFeed(input, target);
             nn.feedForward();
+            nn.backprop();
 
             //FileLoader testDataLoader = new FileLoader();
             //FileLoader testLabelLoader = new FileLoader();

@@ -27,7 +27,11 @@ namespace Neural_Image_Recontruction
 
         public void save()
         {
-            file = toString(weights);
+            //file = toString(weights);
+
+            //byte[][][][] bytes = toBytes(weights);
+
+            //File.WriteAllBytes("C:\\Users\\Sebi\\OneDrive\\Dokumente\\Master\\Erasmus\\Vorlesungen\\project\\code\\save-files\\foo.dat", bytes);
 
             SaveFileDialog saveFile = new SaveFileDialog();
             saveFile.Filter = "Weights Matrix|*.wght";
@@ -111,5 +115,23 @@ namespace Neural_Image_Recontruction
 
             return weights;
         } //toArray
+
+        private byte[][][][] toBytes(double[][][] weights)
+        {
+            byte[][][][] bytes = new byte[weights.Length][][][];
+            for(int i=0; i<weights.Length; i++)
+            {
+                Array.Resize(ref bytes[i], weights[i].Length);
+                for(int j=0; j<weights[i].Length; j++)
+                {
+                    Array.Resize(ref bytes[i][j], weights[i][j].Length);
+                    for(int k=0; k< weights[i][j].Length; k++)
+                    {
+                        bytes[i][j][k] = BitConverter.GetBytes(weights[i][j][k]);
+                    }
+                }
+            }
+            return bytes;
+        }
     }
 }

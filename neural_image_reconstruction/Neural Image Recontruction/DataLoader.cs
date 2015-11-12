@@ -36,6 +36,7 @@ namespace Neural_Image_Recontruction
             _noiseType = noise_type;
             _samples = samples;
             _database = database;
+            Array.Resize(ref _imgArr, 0);
             Array.Resize(ref _imgArr, _samples);
             for(int i=0; i<_samples; i++)
             {
@@ -71,6 +72,8 @@ namespace Neural_Image_Recontruction
 
             string word = string.Empty;
             char[] token = new char[1];
+            i = 0;
+            j = 0;
 
             //if (_noiseType == "clean")
             //{
@@ -111,7 +114,19 @@ namespace Neural_Image_Recontruction
                 else if (token[0].ToString() == ",")
                 {
                     //separator between pixel values
-                    _imgArr[i][j] = int.Parse(word);
+                    try
+                    {
+                        _imgArr[i][j] = int.Parse(word);
+                        if (int.Parse(word) > 255)
+                        {
+                            _imgArr[i][j] = 255;
+                        }
+                    }
+                    catch (System.IndexOutOfRangeException ex)
+                    {
+                        //image already complete                        
+                        break;
+                    }
                     word = string.Empty;
                     j++;
                 }
