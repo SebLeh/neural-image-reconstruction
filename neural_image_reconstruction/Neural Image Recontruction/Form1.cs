@@ -27,8 +27,9 @@ namespace Neural_Image_Recontruction
 
         public void init()
         {
-            int[] layers = { 600, 700, 800 };
-            nn = new NN(3, layers);
+            int[] layers = { 600, 700};
+            nn = new NN(2, layers);
+            //nn = new NN(784);
         }
 
         private void setDataPathToolStripMenuItem_Click(object sender, EventArgs e)
@@ -66,11 +67,16 @@ namespace Neural_Image_Recontruction
             fileLoader.open();
             data.trainingLabels = fileLoader._imgArr;
 
-            double[] input = data.normalize(data.trainingData[0]);
-            double[] target = data.normalize(data.trainingLabels[0]);
-            nn.prepareFeed(input, target);
-            nn.feedForward();
-            nn.backprop();
+            for (int i=0; i<999; i++)
+            {
+                double[] input = data.normalize(data.trainingData[i]);
+                double[] target = data.normalize(data.trainingLabels[i]);
+                nn.prepareFeed(input, target);
+                nn.feedForward();
+                nn.backprop();
+                nn.trainingErrors[i] = nn.getError();
+            }
+            int a = 0;
 
             //FileLoader testDataLoader = new FileLoader();
             //FileLoader testLabelLoader = new FileLoader();

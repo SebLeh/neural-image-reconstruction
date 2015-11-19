@@ -174,10 +174,15 @@ namespace Neural_Image_Recontruction
 
         private void calcError()
         {
-            for (int i=0; i < errorVector.Length; i++)
+            Parallel.For(0, errorVector.Length, (i) =>
             {
                 errorVector[i] = outputVector[i] * (1 - outputVector[i]) * (target[i] - outputVector[i]);
-            }
+                //errorVector[i] = target[i] - outputVector[i];
+            });
+            //for (int i=0; i < errorVector.Length; i++)
+            //{
+            //    errorVector[i] = outputVector[i] * (1 - outputVector[i]) * (target[i] - outputVector[i]);
+            //}
         }
 
         public void backprop()
@@ -197,10 +202,14 @@ namespace Neural_Image_Recontruction
                     Parallel.For(1, hiddenErrors[ii].Length, (j) =>
                     {
                         double sumJ = 0;
-                        Parallel.For(0, errorVector.Length, (k) =>
+                        for (int k=0; k<errorVector.Length; k++)
                         {
                             sumJ += errorVector[k] * weights[ii + 1][k][j];
-                        });
+                        }
+                        //Parallel.For(0, errorVector.Length, (k) =>
+                        //{
+                        //    sumJ += errorVector[k] * weights[ii + 1][k][j];
+                        //});
                         hiddenErrors[ii][j] = hiddenVectors[ii][j - 1] * (1 - hiddenVectors[ii][j - 1]) * sumJ;
                         // j-1: vectors don't contain bias -> 1 less value
                     });
@@ -216,10 +225,14 @@ namespace Neural_Image_Recontruction
                     Parallel.For(1, hiddenErrors[ii].Length, (j) =>
                     {
                         double sumJ = 0;
-                        Parallel.For(1, hiddenErrors[ii + 1].Length, (k) =>
+                        for (int k=1; k<hiddenErrors[ii+1].Length; k++)
                         {
                             sumJ += hiddenVectors[ii + 1][k - 1] * weights[ii + 1][k - 1][j];
-                        });
+                        }
+                        //Parallel.For(1, hiddenErrors[ii + 1].Length, (k) =>
+                        //{
+                        //    sumJ += hiddenVectors[ii + 1][k - 1] * weights[ii + 1][k - 1][j];
+                        //});
                         hiddenErrors[ii][j] = hiddenVectors[ii][j - 1] * (1 - hiddenVectors[ii][j - 1]) * sumJ;
                     });
                 } //if            
@@ -229,7 +242,70 @@ namespace Neural_Image_Recontruction
 
         private void adaptWeights()
         {
-
+            //first layer weights 
+            Parallel.For(0, weights[0].Length, (j) =>
+            {
+                weights[0][j][0] = weights[0][j][0] + learningRate * inputVector[j]; //bias weight
+                for (int k=0; k<weights[0][j].Length - 1; k++)
+                {
+                    weights[0][j][k + 1] = weights[0][j][k + 1] + learningRate * inputVector[k] * hiddenVectors[0][j];
+                    //other weights
+                }
+                //Parallel.For(0, weights[0][j].Length - 1, (k) =>
+                //{
+                //    weights[0][j][k + 1] = weights[0][j][k + 1] + learningRate * inputVector[j] * hiddenVectors[0][k];
+                //    //other weights
+                //});
+            });
+            Parallel.For(1, weights.Length, (i) =>
+            {
+                if (i < weights.Length - 1)
+                {
+                    // dependent on hidden layers
+                    Parallel.For(0, weights[i].Length, (j) =>
+                    {
+                        weights[i][j][0] = weights[i][j][0] + learningRate * hiddenVectors[i][j]; //bias weight
+                        for (int k=0; k<weights[i][j].Length - 1; k++)
+                        {
+                            weights[i][j][k + 1] = weights[i][j][k + 1] + learningRate * hiddenVectors[i-1][k] * hiddenVectors[i][j];
+                            //other weights
+                        }
+                        //Parallel.For(0, weights[i][j].Length - 1, (k) =>
+                        //{
+                        //    weights[i][j][k + 1] = weights[i][j][k + 1] + learningRate * hiddenVectors[i-1][k] * hiddenVectors[i][j];
+                        //    //other weights
+                        //});
+                    });
+                }
+                else
+                {
+                    // dependent on output layer
+                    Parallel.For(0, weights[i].Length, (j) =>
+                    {
+                        weights[i][j][0] = weights[i][j][0] + learningRate * errorVector[j]; //bias weight
+                        for (int k = 0; k < weights[i][j].Length - 1; k++)
+                        {
+                            weights[i][j][k + 1] = weights[i][j][k + 1] + learningRate * errorVector[j] * hiddenVectors[i - 1][k];
+                            //other weights
+                        }
+                        //Parallel.For(0, weights[i][j].Length -1, (k) =>
+                        //{
+                        //    weights[i][j][k + 1] = weights[i][j][k + 1] + learningRate * errorVector[j] * hiddenVectors[i - 1][k];
+                        //    //other weights
+                        //});
+                    });
+                }
+            });
         } // adaptWeights
+
+        public double getError()
+        {
+            double error = 0;
+            Parallel.For(0, errorVector.Length, (i) =>
+            {
+                error += Math.Abs(errorVector[i]);
+            });
+            return error;
+        }
     } // class NN
 }
