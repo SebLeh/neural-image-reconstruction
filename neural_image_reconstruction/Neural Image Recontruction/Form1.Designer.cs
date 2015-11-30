@@ -37,6 +37,7 @@
             this.setLabelPathToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.status_bar = new System.Windows.Forms.StatusStrip();
             this.ui_progressBar = new System.Windows.Forms.ToolStripProgressBar();
+            this.ui_statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.layer_box = new System.Windows.Forms.GroupBox();
             this.ui_neurons = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,7 +46,7 @@
             this.ui_load = new System.Windows.Forms.Button();
             this.ui_noiseType = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.ui_statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.ui_experiment = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.status_bar.SuspendLayout();
             this.layer_box.SuspendLayout();
@@ -105,7 +106,7 @@
             // setDataPathToolStripMenuItem
             // 
             this.setDataPathToolStripMenuItem.Name = "setDataPathToolStripMenuItem";
-            this.setDataPathToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.setDataPathToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.setDataPathToolStripMenuItem.Text = "set data path";
             this.setDataPathToolStripMenuItem.ToolTipText = "Path to where both, Test- and Training-Data is positioned";
             this.setDataPathToolStripMenuItem.Click += new System.EventHandler(this.setDataPathToolStripMenuItem_Click);
@@ -113,7 +114,7 @@
             // setLabelPathToolStripMenuItem
             // 
             this.setLabelPathToolStripMenuItem.Name = "setLabelPathToolStripMenuItem";
-            this.setLabelPathToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.setLabelPathToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.setLabelPathToolStripMenuItem.Text = "set label path";
             this.setLabelPathToolStripMenuItem.ToolTipText = "Path to where both, Test- and Training-Labels are positioned";
             this.setLabelPathToolStripMenuItem.Click += new System.EventHandler(this.setLabelPathToolStripMenuItem_Click);
@@ -132,6 +133,11 @@
             // 
             this.ui_progressBar.Name = "ui_progressBar";
             this.ui_progressBar.Size = new System.Drawing.Size(100, 16);
+            // 
+            // ui_statusLabel
+            // 
+            this.ui_statusLabel.Name = "ui_statusLabel";
+            this.ui_statusLabel.Size = new System.Drawing.Size(0, 17);
             // 
             // layer_box
             // 
@@ -246,16 +252,22 @@
             this.label3.TabIndex = 1002;
             this.label3.Text = "Type of data";
             // 
-            // ui_statusLabel
+            // ui_experiment
             // 
-            this.ui_statusLabel.Name = "ui_statusLabel";
-            this.ui_statusLabel.Size = new System.Drawing.Size(0, 17);
+            this.ui_experiment.Location = new System.Drawing.Point(294, 247);
+            this.ui_experiment.Name = "ui_experiment";
+            this.ui_experiment.Size = new System.Drawing.Size(75, 23);
+            this.ui_experiment.TabIndex = 1003;
+            this.ui_experiment.Text = "Experiment";
+            this.ui_experiment.UseVisualStyleBackColor = true;
+            this.ui_experiment.Click += new System.EventHandler(this.ui_experiment_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(381, 324);
+            this.Controls.Add(this.ui_experiment);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.ui_noiseType);
             this.Controls.Add(this.ui_load);
@@ -298,6 +310,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ToolStripMenuItem setLabelPathToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel ui_statusLabel;
+        private System.Windows.Forms.Button ui_experiment;
     }
 }
 

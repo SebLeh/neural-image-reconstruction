@@ -26,6 +26,9 @@ namespace Neural_Image_Recontruction
         private double[][] hiddenVectors = new double[1][]; // storing vectors hidden layers produced; needed for backprop
         private double[][] hiddenErrors = new double[1][];  // storing errors on hidden layers
 
+        private double gain = 1.0;
+        private int sigmoidLevels = 1;
+
         public NN()
         {
             // default: 1 hidden layer with 784 units
@@ -56,6 +59,15 @@ namespace Neural_Image_Recontruction
             init();
         }
 
+        public NN(int units, int layers, int levels)
+        {
+            // used for experimental phase with small subsections
+            hiddenUnits = units;
+            noHidden = layers;
+            sigmoidLevels = levels;
+            initExperiment();
+        }
+
         private void init()
         {
             initlayers();
@@ -80,7 +92,7 @@ namespace Neural_Image_Recontruction
                 Array.Resize(ref diffHiddenUnits, noHidden);
                 for (int i = 0; i < noHidden; i++)
                 {
-                    diffHiddenUnits[i] = hiddenUnits + 1;  // +1 for bias
+                    diffHiddenUnits[i] = hiddenUnits;
                 }
             } //if
             for (int i = 0; i < noHidden; i++)
@@ -88,7 +100,7 @@ namespace Neural_Image_Recontruction
                 Array.Resize(ref weights[i], diffHiddenUnits[i]); 
             }
             Array.Resize(ref weights[weights.Length - 1], 784); // 784 outputs
-            for (int i=0; i<weights[0].Length; i++)
+            for (int i=0; i<weights[0].Length; i++)  //input layer; 784+1
             {
                 Array.Resize(ref weights[0][i], 785); // 28x28 inputs + bias unit
             }
@@ -157,6 +169,7 @@ namespace Neural_Image_Recontruction
                 }
             } // for(i)
             outputVector = layerValues;
+            calcGain();
             calcError();
         } // feedForward
 
@@ -168,8 +181,18 @@ namespace Neural_Image_Recontruction
         private double sigmoid(double netValue)
         {
             double sigmoid = 0;
-            sigmoid = 1 / (1 + Math.Exp(-netValue));
+            sigmoid = 1 / (1 + Math.Exp(-netValue*gain));
             return sigmoid;
+        }
+
+        private double mlSigmoid(double netValue, int levels)
+        {
+            double output = 0;
+            for (int i=-levels; i<=levels; i++)
+            {
+                output += 1 / (1 + Math.Exp(-netValue - 8*i));
+            }
+            return output;
         }
 
         private void calcError()
@@ -184,6 +207,20 @@ namespace Neural_Image_Recontruction
             //    errorVector[i] = outputVector[i] * (1 - outputVector[i]) * (target[i] - outputVector[i]);
             //}
         }
+
+        private void calcErrorLevels(int sigmoidLevels)
+        {
+            Parallel.For(0, errorVector.Length, (i) =>
+            {
+                double derivate = 0;
+                for (int j = -(sigmoidLevels/2 -1); j < sigmoidLevels/2 -1; j++)
+                {
+                    derivate += (1 / (1 + Math.Exp(-outputVector[i] + 8 * j)))*(1 - 1 / (1 + Math.Exp(-outputVector[i] + 8 * j)));
+                }
+                errorVector[i] = (target[i] - outputVector[i]) * derivate;
+            });
+        }
+          
 
         public void backprop()
         {
@@ -245,7 +282,7 @@ namespace Neural_Image_Recontruction
             //first layer weights 
             Parallel.For(0, weights[0].Length, (j) =>
             {
-                weights[0][j][0] = weights[0][j][0] + learningRate * inputVector[j]; //bias weight
+                weights[0][j][0] = weights[0][j][0] + learningRate * 1 * hiddenVectors[0][j]; //bias weight
                 for (int k=0; k<weights[0][j].Length - 1; k++)
                 {
                     weights[0][j][k + 1] = weights[0][j][k + 1] + learningRate * inputVector[k] * hiddenVectors[0][j];
@@ -306,6 +343,54 @@ namespace Neural_Image_Recontruction
                 error += Math.Abs(errorVector[i]);
             });
             return error;
+        }
+
+        private void calcGain()
+        {
+            double e = 0;
+            for (int i=0; i<target.Length - 1; i++)
+            {
+                if (Math.Abs(target[i] - outputVector[i]) > Math.Abs(target[i+1] - outputVector[i + 1]))
+                {
+                    e = Math.Abs(target[i] - outputVector[i]);
+                }
+                else
+                {
+                    // max difference at last index
+                    e = Math.Abs(target[target.Length - 1] - outputVector[outputVector.Length - 1]);
+                }
+            }
+            double approx = e / 0.5;
+            if (approx > 1)
+            {
+                gain = 0.5 / e;
+            }
+            else
+            {
+                gain = 1;
+            }
+        }
+
+        private void initExperiment()
+        {
+            Array.Resize(ref weights, noHidden + 1);
+            for (int i = 0; i <= noHidden; i++)
+            {
+                Array.Resize(ref weights[i], 9);
+            }
+            for (int i = 0; i < weights.Length; i++)
+            {
+                for (int j = 0; j < weights[i].Length; j++)
+                {
+                    Array.Resize(ref weights[i][j], 10); // + bias unit
+                }
+            }
+            initWeights();
+            Array.Resize(ref hiddenVectors, noHidden);
+            for (int i=0; i<noHidden; i++)
+            {
+                Array.Resize(ref hiddenVectors[i], 9);
+            }
         }
     } // class NN
 }

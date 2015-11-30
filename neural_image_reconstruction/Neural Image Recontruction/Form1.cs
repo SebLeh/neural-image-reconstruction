@@ -27,9 +27,9 @@ namespace Neural_Image_Recontruction
 
         public void init()
         {
-            int[] layers = { 600, 700};
-            nn = new NN(2, layers);
-            //nn = new NN(784);
+            int[] layers = { 600, 1500, 600, 1500};
+            //nn = new NN(4, layers);
+            nn = new NN(2, 800);
         }
 
         private void setDataPathToolStripMenuItem_Click(object sender, EventArgs e)
@@ -76,7 +76,6 @@ namespace Neural_Image_Recontruction
                 nn.backprop();
                 nn.trainingErrors[i] = nn.getError();
             }
-            int a = 0;
 
             //FileLoader testDataLoader = new FileLoader();
             //FileLoader testLabelLoader = new FileLoader();
@@ -185,6 +184,37 @@ namespace Neural_Image_Recontruction
         {
             FileManager fileMng = new FileManager();
             fileMng.load();
+        }
+
+        private void ui_experiment_Click(object sender, EventArgs e)
+        {
+            DataLoader fileLoader = new DataLoader();
+            fileLoader.prepareOpen(dataPath, "train", "gauss_15", 1000, 0);
+            fileLoader.open();
+            data.trainingData = fileLoader._imgArr;
+
+            fileLoader.prepareOpen(labelPath, "train", "clean", 1000, 0);
+            fileLoader.open();
+            data.trainingLabels = fileLoader._imgArr;
+
+            NN nn = new NN(9, 2, 4); //units, (hidden) layers, sidmoid levels
+            for (int i = 0; i < 999; i++)
+            {
+                for (int j = 1; j <= 9; j++)
+                {
+                    for (int k = 1; k <= 9; k++)
+                    {
+
+                    }
+                }
+                double[] input = data.normalize(data.trainingData[i]);
+                double[] target = data.normalize(data.trainingLabels[i]);
+                nn.prepareFeed(input, target);
+                nn.feedForward();
+                nn.backprop();
+                nn.trainingErrors[i] = nn.getError();
+            }
+
         }
     }
 }
